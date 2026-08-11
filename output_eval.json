@@ -1,0 +1,243 @@
+{
+  "summary": {
+    "total_ground_truth": 20,
+    "total_predictions": 20,
+    "total_compared": 20,
+    "is_hallucination_accuracy": 1.0,
+    "confusion_matrix": {
+      "true_positive": 18,
+      "false_positive": 0,
+      "false_negative": 0,
+      "true_negative": 2
+    },
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "hallucination_type_mismatch_count": 18,
+    "missing_in_output": [],
+    "missing_in_ground_truth": [],
+    "anomaly_ids": []
+  },
+  "details": [
+    {
+      "id": "h01",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "政策编造",
+      "pred_hallucination_type": "政策规则错误",
+      "type_match": false,
+      "gt_detail": "回复称支持30天无理由退货且运费由商家承担，实际政策为7天无理由且非质量问题运费买家承担。编造了更宽松的退货政策。",
+      "pred_reason": "知识库规定普通商品7天无理由退货，质量问题30天可退换，且非质量问题运费买家承担。AI回复称全品类30天无理由且运费由商家承担，遗漏了关键限制条件，导致规则表述错误。"
+    },
+    {
+      "id": "h02",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "参数编造",
+      "pred_hallucination_type": "参数和事实错误",
+      "type_match": false,
+      "gt_detail": "蓝牙版本从5.0编造为5.3，多设备连接和40ms延迟均为杜撰。",
+      "pred_reason": "知识库明确记载蓝牙5.0、单设备连接、延迟80ms，AI回复却称蓝牙5.3、多设备连接、延迟40ms，与知识库事实直接矛盾。"
+    },
+    {
+      "id": "h03",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "能力越界",
+      "pred_hallucination_type": "虚构事实",
+      "type_match": false,
+      "gt_detail": "系统未接入物流查询接口，却声称查到了具体位置。属于假装具备不具备的能力。",
+      "pred_reason": "知识库中无物流查询功能，AI却虚构包裹位置和送达时间，属于无中生有的确定性回答。"
+    },
+    {
+      "id": "h04",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "政策偏差",
+      "pred_hallucination_type": "参数和事实错误",
+      "type_match": false,
+      "gt_detail": "支持电子发票是对的，但说支持纸质发票与知识库矛盾。另外指引用户在'备注'里填写也不对，应在订单详情页申请。部分正确部分错误。",
+      "pred_reason": "知识库明确说明仅支持电子发票，不支持纸质发票，AI回复却声称支持纸质发票，与知识库事实相违背。"
+    },
+    {
+      "id": "h05",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "优惠编造",
+      "pred_hallucination_type": "虚构事实",
+      "type_match": false,
+      "gt_detail": "杜撰了不存在的'满300减50'优惠券，且承诺'直接发到账户'属于能力越界。",
+      "pred_reason": "知识库明确无满300减50活动，AI却虚构该优惠券并承诺发放，属于无中生有。"
+    },
+    {
+      "id": "h06",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "参数编造",
+      "pred_hallucination_type": "参数和事实错误",
+      "type_match": false,
+      "gt_detail": "材质从PU合成革编造为头层牛皮，保修期从6个月编造为两年。严重误导消费者。",
+      "pred_reason": "知识库明确标注材质为PU合成革，保修期6个月，AI却回复头层牛皮和两年保修，与知识库事实直接矛盾。"
+    },
+    {
+      "id": "h07",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "信息编造",
+      "pred_hallucination_type": "虚构事实",
+      "type_match": false,
+      "gt_detail": "杜撰了具体的退货地址和收件人。知识库明确规定退货地址需系统自动匹配后以短信发送。",
+      "pred_reason": "知识库明确说明退货地址需系统自动匹配后短信发送，人工不可告知，AI却直接给出具体地址，属于无中生有的虚构事实。"
+    },
+    {
+      "id": "h08",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "政策偏差",
+      "pred_hallucination_type": "参数和事实错误",
+      "type_match": false,
+      "gt_detail": "发货时间从24小时编造为48小时，快递公司从'中通/韵达/圆通'编造为'顺丰'。",
+      "pred_reason": "知识库明确发货时间为24小时内，AI回复为48小时；快递为中通/韵达/圆通，AI回复为顺丰；到货时间知识库为3-5天，AI回复为2-3天，多处与知识库矛盾。"
+    },
+    {
+      "id": "h09",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "参数编造",
+      "pred_hallucination_type": "虚构事实",
+      "type_match": false,
+      "gt_detail": "知识库中未标注NFC功能，回复却肯定支持并列举了具体用途。",
+      "pred_reason": "知识库中未标注NFC功能，AI却自信回复支持NFC并列举用途，属于无中生有的虚构事实。"
+    },
+    {
+      "id": "h10",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "能力越界",
+      "pred_hallucination_type": "虚构事实",
+      "type_match": false,
+      "gt_detail": "系统未接入退款进度查询接口，却声称已查到进度并给出了具体到账时间。",
+      "pred_reason": "知识库中无退款进度查询功能，AI却自信回复退款处理中并预计明天到账，属于无中生有的虚构事实。"
+    },
+    {
+      "id": "h11",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "信息编造",
+      "pred_hallucination_type": "虚构事实",
+      "type_match": false,
+      "gt_detail": "品牌为纯线上电商，杜撰了四个城市的线下体验店和'门店查询'页面。",
+      "pred_reason": "知识库明确说明品牌为纯线上电商，无线下门店，但AI回复声称在北京、上海、广州、深圳有线下体验店，完全凭空捏造，属于虚构事实。"
+    },
+    {
+      "id": "h12",
+      "gt_is_hallucination": false,
+      "pred_is_hallucination": false,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": null,
+      "pred_hallucination_type": null,
+      "type_match": null,
+      "gt_detail": "回复与知识库一致。不支持货到付款、支持的支付方式均正确。",
+      "pred_reason": "AI回复与知识库内容一致，均表示不支持货到付款，且正确列出支持的支付方式，无冲突或遗漏。"
+    },
+    {
+      "id": "h13",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "安全误导",
+      "pred_hallucination_type": "安全风险",
+      "type_match": false,
+      "gt_detail": "知识库明确标注含视黄醇衍生物、孕妇建议咨询医生，回复却说'可以放心使用'。可能造成健康风险。",
+      "pred_reason": "知识库明确提示含视黄醇衍生物，孕妇需咨询医生，AI却回复可以放心使用，未传达安全风险。"
+    },
+    {
+      "id": "h14",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "能力越界",
+      "pred_hallucination_type": "虚构事实",
+      "type_match": false,
+      "gt_detail": "系统未接入订单修改接口，却声称已修改地址。属于假装执行了不具备的操作能力。",
+      "pred_reason": "知识库明确说明系统未接入订单修改接口，需人工后台操作，但AI却自信回复已修改地址并承诺发货，属于无中生有的虚构事实。"
+    },
+    {
+      "id": "h15",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "信息编造",
+      "pred_hallucination_type": "虚构事实",
+      "type_match": false,
+      "gt_detail": "杜撰了与其他品牌的关联关系，知识库中无任何相关信息。",
+      "pred_reason": "知识库中未提及与XX品牌的关联，AI却自信声称是子品牌并共享供应链，属于无中生有的虚构事实。"
+    },
+    {
+      "id": "h16",
+      "gt_is_hallucination": false,
+      "pred_is_hallucination": false,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": null,
+      "pred_hallucination_type": null,
+      "type_match": null,
+      "gt_detail": "回复内容与知识库的温馨提示一致，关于色差的说明准确。",
+      "pred_reason": "AI回复内容与知识库一致，均提及图片可能存在轻微色差，未出现与知识库相违背或超出范围的信息。"
+    },
+    {
+      "id": "h17",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "参数编造",
+      "pred_hallucination_type": "参数和事实错误",
+      "type_match": false,
+      "gt_detail": "充电头接口从USB-A编造为Type-C，属于关键产品参数错误。",
+      "pred_reason": "知识库明确标注接口类型为USB-A，AI却回复为Type-C，与事实相违背。"
+    },
+    {
+      "id": "h18",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "能力越界",
+      "pred_hallucination_type": "虚构事实",
+      "type_match": false,
+      "gt_detail": "系统不具备工单升级功能，却声称已升级并给出'2小时内联系'的承诺。",
+      "pred_reason": "知识库明确说明客服系统不具备工单升级功能，需转人工处理，但AI却虚构了升级工单和2小时联系的服务承诺。"
+    },
+    {
+      "id": "h19",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "优惠编造",
+      "pred_hallucination_type": "虚构事实",
+      "type_match": false,
+      "gt_detail": "杜撰了不存在的学生优惠政策和'学生认证'功能入口。",
+      "pred_reason": "知识库明确说明无学生优惠政策，AI却编造出9折优惠及认证流程，属于无中生有的虚构事实。"
+    },
+    {
+      "id": "h20",
+      "gt_is_hallucination": true,
+      "pred_is_hallucination": true,
+      "is_hallucination_correct": true,
+      "gt_hallucination_type": "信息遗漏",
+      "pred_hallucination_type": "未采纳文档",
+      "type_match": false,
+      "gt_detail": "知识库中有'30%用户反馈偏大半码'的信息，回复却说'尺码标准不偏'，遗漏了关键信息导致建议不准确。这类边界较模糊。",
+      "pred_reason": "知识库明确记载约30%用户反馈偏大半码，建议脚瘦选小半码，但AI回复称尺码标准不偏大不偏小，完全未采纳该直接相关信息。"
+    }
+  ]
+}
